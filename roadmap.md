@@ -1,8 +1,8 @@
 # Maqueta SalesIA
-- [ ] Vitrina, combos, cotización y confirmación
-- [ ] Login y navegación interna
-- [ ] Dashboard, pedidos y detalle con revisión visual IA
-- [ ] Ventas, inventario y mantenimiento
-- [ ] Analytics, Bayes, insights y reportes
-- [ ] Usuarios, auditoría y alertas
-- [ ] Verificar navegación y vistas
+- [x] Vitrina, combos, cotización y confirmación
+- [x] Login y navegación interna
+- [x] Dashboard, pedidos y detalle con revisión visual IA
+- [x] Ventas, inventario y mantenimiento
+- [x] Analytics, Bayes, insights y reportes
+- [x] Usuarios, auditoría y alertas
+- [x] Verificar navegación y vistas
