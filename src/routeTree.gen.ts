@@ -12,25 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CombosRouteImport } from './routes/combos'
 import { Route as ConfirmacionRouteImport } from './routes/confirmacion'
-import { Route as LoginRouteImport } from './routes/login'
+import { Route as CotizarRouteImport } from './routes/cotizar'
 import { Route as PersonalizarRouteImport } from './routes/personalizar'
-import { Route as SalesiaRouteImport } from './routes/salesia'
-import { Route as SalesiaIndexRouteImport } from './routes/salesia.index'
-import { Route as SalesiaAnalyticsRouteImport } from './routes/salesia.analytics'
-import { Route as SalesiaAuditoriaRouteImport } from './routes/salesia.auditoria'
-import { Route as SalesiaBayesRouteImport } from './routes/salesia.bayes'
-import { Route as SalesiaClientesRouteImport } from './routes/salesia.clientes'
-import { Route as SalesiaInsightsRouteImport } from './routes/salesia.insights'
-import { Route as SalesiaInventarioRouteImport } from './routes/salesia.inventario'
-import { Route as SalesiaPedidosRouteImport } from './routes/salesia.pedidos'
-import { Route as SalesiaProductosRouteImport } from './routes/salesia.productos'
-import { Route as SalesiaProveedoresRouteImport } from './routes/salesia.proveedores'
-import { Route as SalesiaReportesRouteImport } from './routes/salesia.reportes'
-import { Route as SalesiaRevisionIaRouteImport } from './routes/salesia.revision-ia'
-import { Route as SalesiaUsuariosRouteImport } from './routes/salesia.usuarios'
-import { Route as SalesiaVentasRouteImport } from './routes/salesia.ventas'
-import { Route as SalesiaPedidosIndexRouteImport } from './routes/salesia.pedidos.index'
-import { Route as SalesiaPedidosIdRouteImport } from './routes/salesia.pedidos.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -47,9 +30,9 @@ const ConfirmacionRoute = ConfirmacionRouteImport.update({
   path: '/confirmacion',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
+const CotizarRoute = CotizarRouteImport.update({
+  id: '/cotizar',
+  path: '/cotizar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PersonalizarRoute = PersonalizarRouteImport.update({
@@ -57,243 +40,49 @@ const PersonalizarRoute = PersonalizarRouteImport.update({
   path: '/personalizar',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SalesiaRoute = SalesiaRouteImport.update({
-  id: '/salesia',
-  path: '/salesia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SalesiaIndexRoute = SalesiaIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaAnalyticsRoute = SalesiaAnalyticsRouteImport.update({
-  id: '/analytics',
-  path: '/analytics',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaAuditoriaRoute = SalesiaAuditoriaRouteImport.update({
-  id: '/auditoria',
-  path: '/auditoria',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaBayesRoute = SalesiaBayesRouteImport.update({
-  id: '/bayes',
-  path: '/bayes',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaClientesRoute = SalesiaClientesRouteImport.update({
-  id: '/clientes',
-  path: '/clientes',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaInsightsRoute = SalesiaInsightsRouteImport.update({
-  id: '/insights',
-  path: '/insights',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaInventarioRoute = SalesiaInventarioRouteImport.update({
-  id: '/inventario',
-  path: '/inventario',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaPedidosRoute = SalesiaPedidosRouteImport.update({
-  id: '/pedidos',
-  path: '/pedidos',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaProductosRoute = SalesiaProductosRouteImport.update({
-  id: '/productos',
-  path: '/productos',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaProveedoresRoute = SalesiaProveedoresRouteImport.update({
-  id: '/proveedores',
-  path: '/proveedores',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaReportesRoute = SalesiaReportesRouteImport.update({
-  id: '/reportes',
-  path: '/reportes',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaRevisionIaRoute = SalesiaRevisionIaRouteImport.update({
-  id: '/revision-ia',
-  path: '/revision-ia',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaUsuariosRoute = SalesiaUsuariosRouteImport.update({
-  id: '/usuarios',
-  path: '/usuarios',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaVentasRoute = SalesiaVentasRouteImport.update({
-  id: '/ventas',
-  path: '/ventas',
-  getParentRoute: () => SalesiaRoute,
-} as any)
-const SalesiaPedidosIndexRoute = SalesiaPedidosIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => SalesiaPedidosRoute,
-} as any)
-const SalesiaPedidosIdRoute = SalesiaPedidosIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => SalesiaPedidosRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/combos': typeof CombosRoute
   '/confirmacion': typeof ConfirmacionRoute
-  '/login': typeof LoginRoute
+  '/cotizar': typeof CotizarRoute
   '/personalizar': typeof PersonalizarRoute
-  '/salesia': typeof SalesiaRouteWithChildren
-  '/salesia/analytics': typeof SalesiaAnalyticsRoute
-  '/salesia/auditoria': typeof SalesiaAuditoriaRoute
-  '/salesia/bayes': typeof SalesiaBayesRoute
-  '/salesia/clientes': typeof SalesiaClientesRoute
-  '/salesia/insights': typeof SalesiaInsightsRoute
-  '/salesia/inventario': typeof SalesiaInventarioRoute
-  '/salesia/pedidos': typeof SalesiaPedidosRouteWithChildren
-  '/salesia/productos': typeof SalesiaProductosRoute
-  '/salesia/proveedores': typeof SalesiaProveedoresRoute
-  '/salesia/reportes': typeof SalesiaReportesRoute
-  '/salesia/revision-ia': typeof SalesiaRevisionIaRoute
-  '/salesia/usuarios': typeof SalesiaUsuariosRoute
-  '/salesia/ventas': typeof SalesiaVentasRoute
-  '/salesia/': typeof SalesiaIndexRoute
-  '/salesia/pedidos/$id': typeof SalesiaPedidosIdRoute
-  '/salesia/pedidos/': typeof SalesiaPedidosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/combos': typeof CombosRoute
   '/confirmacion': typeof ConfirmacionRoute
-  '/login': typeof LoginRoute
+  '/cotizar': typeof CotizarRoute
   '/personalizar': typeof PersonalizarRoute
-  '/salesia/analytics': typeof SalesiaAnalyticsRoute
-  '/salesia/auditoria': typeof SalesiaAuditoriaRoute
-  '/salesia/bayes': typeof SalesiaBayesRoute
-  '/salesia/clientes': typeof SalesiaClientesRoute
-  '/salesia/insights': typeof SalesiaInsightsRoute
-  '/salesia/inventario': typeof SalesiaInventarioRoute
-  '/salesia/productos': typeof SalesiaProductosRoute
-  '/salesia/proveedores': typeof SalesiaProveedoresRoute
-  '/salesia/reportes': typeof SalesiaReportesRoute
-  '/salesia/revision-ia': typeof SalesiaRevisionIaRoute
-  '/salesia/usuarios': typeof SalesiaUsuariosRoute
-  '/salesia/ventas': typeof SalesiaVentasRoute
-  '/salesia': typeof SalesiaIndexRoute
-  '/salesia/pedidos/$id': typeof SalesiaPedidosIdRoute
-  '/salesia/pedidos': typeof SalesiaPedidosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/combos': typeof CombosRoute
   '/confirmacion': typeof ConfirmacionRoute
-  '/login': typeof LoginRoute
+  '/cotizar': typeof CotizarRoute
   '/personalizar': typeof PersonalizarRoute
-  '/salesia': typeof SalesiaRouteWithChildren
-  '/salesia/analytics': typeof SalesiaAnalyticsRoute
-  '/salesia/auditoria': typeof SalesiaAuditoriaRoute
-  '/salesia/bayes': typeof SalesiaBayesRoute
-  '/salesia/clientes': typeof SalesiaClientesRoute
-  '/salesia/insights': typeof SalesiaInsightsRoute
-  '/salesia/inventario': typeof SalesiaInventarioRoute
-  '/salesia/pedidos': typeof SalesiaPedidosRouteWithChildren
-  '/salesia/productos': typeof SalesiaProductosRoute
-  '/salesia/proveedores': typeof SalesiaProveedoresRoute
-  '/salesia/reportes': typeof SalesiaReportesRoute
-  '/salesia/revision-ia': typeof SalesiaRevisionIaRoute
-  '/salesia/usuarios': typeof SalesiaUsuariosRoute
-  '/salesia/ventas': typeof SalesiaVentasRoute
-  '/salesia/': typeof SalesiaIndexRoute
-  '/salesia/pedidos/$id': typeof SalesiaPedidosIdRoute
-  '/salesia/pedidos/': typeof SalesiaPedidosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/combos'
-    | '/confirmacion'
-    | '/login'
-    | '/personalizar'
-    | '/salesia'
-    | '/salesia/analytics'
-    | '/salesia/auditoria'
-    | '/salesia/bayes'
-    | '/salesia/clientes'
-    | '/salesia/insights'
-    | '/salesia/inventario'
-    | '/salesia/pedidos'
-    | '/salesia/productos'
-    | '/salesia/proveedores'
-    | '/salesia/reportes'
-    | '/salesia/revision-ia'
-    | '/salesia/usuarios'
-    | '/salesia/ventas'
-    | '/salesia/'
-    | '/salesia/pedidos/$id'
-    | '/salesia/pedidos/'
+  fullPaths: '/' | '/combos' | '/confirmacion' | '/cotizar' | '/personalizar'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/combos'
-    | '/confirmacion'
-    | '/login'
-    | '/personalizar'
-    | '/salesia/analytics'
-    | '/salesia/auditoria'
-    | '/salesia/bayes'
-    | '/salesia/clientes'
-    | '/salesia/insights'
-    | '/salesia/inventario'
-    | '/salesia/productos'
-    | '/salesia/proveedores'
-    | '/salesia/reportes'
-    | '/salesia/revision-ia'
-    | '/salesia/usuarios'
-    | '/salesia/ventas'
-    | '/salesia'
-    | '/salesia/pedidos/$id'
-    | '/salesia/pedidos'
+  to: '/' | '/combos' | '/confirmacion' | '/cotizar' | '/personalizar'
   id:
     | '__root__'
     | '/'
     | '/combos'
     | '/confirmacion'
-    | '/login'
+    | '/cotizar'
     | '/personalizar'
-    | '/salesia'
-    | '/salesia/analytics'
-    | '/salesia/auditoria'
-    | '/salesia/bayes'
-    | '/salesia/clientes'
-    | '/salesia/insights'
-    | '/salesia/inventario'
-    | '/salesia/pedidos'
-    | '/salesia/productos'
-    | '/salesia/proveedores'
-    | '/salesia/reportes'
-    | '/salesia/revision-ia'
-    | '/salesia/usuarios'
-    | '/salesia/ventas'
-    | '/salesia/'
-    | '/salesia/pedidos/$id'
-    | '/salesia/pedidos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CombosRoute: typeof CombosRoute
   ConfirmacionRoute: typeof ConfirmacionRoute
-  LoginRoute: typeof LoginRoute
+  CotizarRoute: typeof CotizarRoute
   PersonalizarRoute: typeof PersonalizarRoute
-  SalesiaRoute: typeof SalesiaRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -319,11 +108,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConfirmacionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
+    '/cotizar': {
+      id: '/cotizar'
+      path: '/cotizar'
+      fullPath: '/cotizar'
+      preLoaderRoute: typeof CotizarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/personalizar': {
@@ -333,186 +122,15 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PersonalizarRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/salesia': {
-      id: '/salesia'
-      path: '/salesia'
-      fullPath: '/salesia'
-      preLoaderRoute: typeof SalesiaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/salesia/': {
-      id: '/salesia/'
-      path: '/'
-      fullPath: '/salesia/'
-      preLoaderRoute: typeof SalesiaIndexRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/analytics': {
-      id: '/salesia/analytics'
-      path: '/analytics'
-      fullPath: '/salesia/analytics'
-      preLoaderRoute: typeof SalesiaAnalyticsRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/auditoria': {
-      id: '/salesia/auditoria'
-      path: '/auditoria'
-      fullPath: '/salesia/auditoria'
-      preLoaderRoute: typeof SalesiaAuditoriaRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/bayes': {
-      id: '/salesia/bayes'
-      path: '/bayes'
-      fullPath: '/salesia/bayes'
-      preLoaderRoute: typeof SalesiaBayesRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/clientes': {
-      id: '/salesia/clientes'
-      path: '/clientes'
-      fullPath: '/salesia/clientes'
-      preLoaderRoute: typeof SalesiaClientesRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/insights': {
-      id: '/salesia/insights'
-      path: '/insights'
-      fullPath: '/salesia/insights'
-      preLoaderRoute: typeof SalesiaInsightsRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/inventario': {
-      id: '/salesia/inventario'
-      path: '/inventario'
-      fullPath: '/salesia/inventario'
-      preLoaderRoute: typeof SalesiaInventarioRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/pedidos': {
-      id: '/salesia/pedidos'
-      path: '/pedidos'
-      fullPath: '/salesia/pedidos'
-      preLoaderRoute: typeof SalesiaPedidosRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/productos': {
-      id: '/salesia/productos'
-      path: '/productos'
-      fullPath: '/salesia/productos'
-      preLoaderRoute: typeof SalesiaProductosRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/proveedores': {
-      id: '/salesia/proveedores'
-      path: '/proveedores'
-      fullPath: '/salesia/proveedores'
-      preLoaderRoute: typeof SalesiaProveedoresRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/reportes': {
-      id: '/salesia/reportes'
-      path: '/reportes'
-      fullPath: '/salesia/reportes'
-      preLoaderRoute: typeof SalesiaReportesRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/revision-ia': {
-      id: '/salesia/revision-ia'
-      path: '/revision-ia'
-      fullPath: '/salesia/revision-ia'
-      preLoaderRoute: typeof SalesiaRevisionIaRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/usuarios': {
-      id: '/salesia/usuarios'
-      path: '/usuarios'
-      fullPath: '/salesia/usuarios'
-      preLoaderRoute: typeof SalesiaUsuariosRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/ventas': {
-      id: '/salesia/ventas'
-      path: '/ventas'
-      fullPath: '/salesia/ventas'
-      preLoaderRoute: typeof SalesiaVentasRouteImport
-      parentRoute: typeof SalesiaRoute
-    }
-    '/salesia/pedidos/': {
-      id: '/salesia/pedidos/'
-      path: '/'
-      fullPath: '/salesia/pedidos/'
-      preLoaderRoute: typeof SalesiaPedidosIndexRouteImport
-      parentRoute: typeof SalesiaPedidosRoute
-    }
-    '/salesia/pedidos/$id': {
-      id: '/salesia/pedidos/$id'
-      path: '/$id'
-      fullPath: '/salesia/pedidos/$id'
-      preLoaderRoute: typeof SalesiaPedidosIdRouteImport
-      parentRoute: typeof SalesiaPedidosRoute
-    }
   }
 }
-
-interface SalesiaPedidosRouteChildren {
-  SalesiaPedidosIdRoute: typeof SalesiaPedidosIdRoute
-  SalesiaPedidosIndexRoute: typeof SalesiaPedidosIndexRoute
-}
-
-const SalesiaPedidosRouteChildren: SalesiaPedidosRouteChildren = {
-  SalesiaPedidosIdRoute: SalesiaPedidosIdRoute,
-  SalesiaPedidosIndexRoute: SalesiaPedidosIndexRoute,
-}
-
-const SalesiaPedidosRouteWithChildren = SalesiaPedidosRoute._addFileChildren(
-  SalesiaPedidosRouteChildren,
-)
-
-interface SalesiaRouteChildren {
-  SalesiaAnalyticsRoute: typeof SalesiaAnalyticsRoute
-  SalesiaAuditoriaRoute: typeof SalesiaAuditoriaRoute
-  SalesiaBayesRoute: typeof SalesiaBayesRoute
-  SalesiaClientesRoute: typeof SalesiaClientesRoute
-  SalesiaInsightsRoute: typeof SalesiaInsightsRoute
-  SalesiaInventarioRoute: typeof SalesiaInventarioRoute
-  SalesiaPedidosRoute: typeof SalesiaPedidosRouteWithChildren
-  SalesiaProductosRoute: typeof SalesiaProductosRoute
-  SalesiaProveedoresRoute: typeof SalesiaProveedoresRoute
-  SalesiaReportesRoute: typeof SalesiaReportesRoute
-  SalesiaRevisionIaRoute: typeof SalesiaRevisionIaRoute
-  SalesiaUsuariosRoute: typeof SalesiaUsuariosRoute
-  SalesiaVentasRoute: typeof SalesiaVentasRoute
-  SalesiaIndexRoute: typeof SalesiaIndexRoute
-}
-
-const SalesiaRouteChildren: SalesiaRouteChildren = {
-  SalesiaAnalyticsRoute: SalesiaAnalyticsRoute,
-  SalesiaAuditoriaRoute: SalesiaAuditoriaRoute,
-  SalesiaBayesRoute: SalesiaBayesRoute,
-  SalesiaClientesRoute: SalesiaClientesRoute,
-  SalesiaInsightsRoute: SalesiaInsightsRoute,
-  SalesiaInventarioRoute: SalesiaInventarioRoute,
-  SalesiaPedidosRoute: SalesiaPedidosRouteWithChildren,
-  SalesiaProductosRoute: SalesiaProductosRoute,
-  SalesiaProveedoresRoute: SalesiaProveedoresRoute,
-  SalesiaReportesRoute: SalesiaReportesRoute,
-  SalesiaRevisionIaRoute: SalesiaRevisionIaRoute,
-  SalesiaUsuariosRoute: SalesiaUsuariosRoute,
-  SalesiaVentasRoute: SalesiaVentasRoute,
-  SalesiaIndexRoute: SalesiaIndexRoute,
-}
-
-const SalesiaRouteWithChildren =
-  SalesiaRoute._addFileChildren(SalesiaRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CombosRoute: CombosRoute,
   ConfirmacionRoute: ConfirmacionRoute,
-  LoginRoute: LoginRoute,
+  CotizarRoute: CotizarRoute,
   PersonalizarRoute: PersonalizarRoute,
-  SalesiaRoute: SalesiaRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
