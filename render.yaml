@@ -1,15 +1,13 @@
 services:
   - type: web
     name: nexodigital
-    runtime: node
+    runtime: bun
     plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: bun install && bun run build
+    startCommand: bun .output/server/index.mjs
     envVars:
       - key: NITRO_PRESET
         value: render-com
-      - key: NODE_VERSION
-        value: "22"
       - key: HOST
         value: 0.0.0.0
       - key: VITE_API_URL
